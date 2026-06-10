@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Розклад сеансів у кінотеатрі Kino Mood. Оберіть зручний час та придбайте квиток онлайн."
+    />
+    <title>Сеанси — Kino Mood</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-dark km-navbar"
+        aria-label="Головна навігація"
+      >
+        <div class="container">
+          <a class="navbar-brand km-logo" href="index.html">Kino Mood</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNav"
+            aria-controls="mainNav"
+            aria-expanded="false"
+            aria-label="Перемкнути навігацію"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Головна</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#about">Про нас</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="sessions.html"
+                  >Сеанси</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contacts.html">Контакти</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- PAGE HEADER -->
+      <section
+        class="km-page-header text-center"
+        aria-label="Заголовок сторінки"
+      >
+        <div class="container">
+          <h1 class="km-page-header__title">Сеанси</h1>
+          <p class="km-page-header__subtitle">
+            Оберіть фільм та зручний час перегляду
+          </p>
+        </div>
+      </section>
+
+      <!-- DATE FILTER -->
+      <section class="km-date-filter py-4" aria-label="Вибір дати">
+        <div class="container">
+          <h2 class="visually-hidden">Фільтр за датою</h2>
+          <div class="km-date-tabs" id="dateTabs" role="tablist">
+            <button
+              class="km-date-tab active"
+              role="tab"
+              aria-selected="true"
+              data-date="today"
+            >
+              <span class="km-date-tab__day">Сьогодні</span>
+              <span class="km-date-tab__num" id="todayDate"></span>
+            </button>
+            <button
+              class="km-date-tab"
+              role="tab"
+              aria-selected="false"
+              data-date="tomorrow"
+            >
+              <span class="km-date-tab__day">Завтра</span>
+              <span class="km-date-tab__num" id="tomorrowDate"></span>
+            </button>
+            <button
+              class="km-date-tab"
+              role="tab"
+              aria-selected="false"
+              data-date="day2"
+            >
+              <span class="km-date-tab__day" id="day2Name"></span>
+              <span class="km-date-tab__num" id="day2Date"></span>
+            </button>
+            <button
+              class="km-date-tab"
+              role="tab"
+              aria-selected="false"
+              data-date="day3"
+            >
+              <span class="km-date-tab__day" id="day3Name"></span>
+              <span class="km-date-tab__num" id="day3Date"></span>
+            </button>
+            <button
+              class="km-date-tab"
+              role="tab"
+              aria-selected="false"
+              data-date="day4"
+            >
+              <span class="km-date-tab__day" id="day4Name"></span>
+              <span class="km-date-tab__num" id="day4Date"></span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SESSIONS LIST -->
+      <section class="km-sessions py-4 pb-5" aria-label="Список сеансів">
+        <div class="container">
+          <h2 class="visually-hidden">Розклад сеансів</h2>
+
+          <!-- Movie Session 1 -->
+          <article class="km-session-row mb-4">
+            <div class="row align-items-center g-3">
+              <div class="col-md-2 col-4">
+                <img
+                  src="img/poster-placeholder-1.webp"
+                  alt="Постер фільму Стрибунці"
+                  class="km-session-row__poster img-fluid rounded"
+                />
+              </div>
+              <div class="col-md-4 col-8">
+                <h3 class="km-session-row__title">Стрибунці</h3>
+                <p class="km-session-row__meta">
+                  2025 • Анімація • 1 год 38 хв
+                </p>
+                <span class="km-badge">6+</span>
+                <span class="km-badge km-badge--format">IMAX</span>
+              </div>
+              <div class="col-md-6">
+                <div class="km-times">
+                  <button class="km-time-btn" type="button">10:20</button>
+                  <button class="km-time-btn" type="button">13:00</button>
+                  <button
+                    class="km-time-btn km-time-btn--sold"
+                    type="button"
+                    disabled
+                    aria-label="Зал 1, 15:30 — місця заповнені"
+                  >
+                    15:30
+                  </button>
+                  <button class="km-time-btn" type="button">18:10</button>
+                  <button class="km-time-btn" type="button">20:45</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Session 2 -->
+          <article class="km-session-row mb-4">
+            <div class="row align-items-center g-3">
+              <div class="col-md-2 col-4">
+                <img
+                  src="img/poster-placeholder-2.webp"
+                  alt="Постер фільму Проєкт Аве Маріє"
+                  class="km-session-row__poster img-fluid rounded"
+                />
+              </div>
+              <div class="col-md-4 col-8">
+                <h3 class="km-session-row__title">Проєкт "Аве Марієˮ</h3>
+                <p class="km-session-row__meta">
+                  2025 • Фантастика • 2 год 24 хв
+                </p>
+                <span class="km-badge">12+</span>
+                <span class="km-badge km-badge--format">Dolby</span>
+              </div>
+              <div class="col-md-6">
+                <div class="km-times">
+                  <button class="km-time-btn" type="button">11:00</button>
+                  <button class="km-time-btn" type="button">14:30</button>
+                  <button class="km-time-btn" type="button">17:00</button>
+                  <button
+                    class="km-time-btn km-time-btn--sold"
+                    type="button"
+                    disabled
+                  >
+                    19:40
+                  </button>
+                  <button class="km-time-btn" type="button">22:10</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Session 3 -->
+          <article class="km-session-row mb-4">
+            <div class="row align-items-center g-3">
+              <div class="col-md-2 col-4">
+                <img
+                  src="img/poster-placeholder-3.webp"
+                  alt="Постер фільму Формула 1"
+                  class="km-session-row__poster img-fluid rounded"
+                />
+              </div>
+              <div class="col-md-4 col-8">
+                <h3 class="km-session-row__title">Формула 1</h3>
+                <p class="km-session-row__meta">
+                  2025 • Спорт/Драма • 2 год 10 хв
+                </p>
+                <span class="km-badge">12+</span>
+                <span class="km-badge km-badge--format">IMAX</span>
+              </div>
+              <div class="col-md-6">
+                <div class="km-times">
+                  <button class="km-time-btn" type="button">12:15</button>
+                  <button class="km-time-btn" type="button">15:00</button>
+                  <button class="km-time-btn" type="button">17:45</button>
+                  <button class="km-time-btn" type="button">20:30</button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Session 4 -->
+          <article class="km-session-row mb-4">
+            <div class="row align-items-center g-3">
+              <div class="col-md-2 col-4">
+                <img
+                  src="img/poster-placeholder-4.webp"
+                  alt="Постер фільму Місія неможлива"
+                  class="km-session-row__poster img-fluid rounded"
+                />
+              </div>
+              <div class="col-md-4 col-8">
+                <h3 class="km-session-row__title">Місія: Неможлива</h3>
+                <p class="km-session-row__meta">2025 • Екшн • 2 год 45 хв</p>
+                <span class="km-badge">16+</span>
+                <span class="km-badge km-badge--format">4DX</span>
+              </div>
+              <div class="col-md-6">
+                <div class="km-times">
+                  <button class="km-time-btn" type="button">13:30</button>
+                  <button class="km-time-btn" type="button">16:30</button>
+                  <button
+                    class="km-time-btn km-time-btn--sold"
+                    type="button"
+                    disabled
+                  >
+                    19:15
+                  </button>
+                  <button class="km-time-btn" type="button">22:30</button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- TICKET MODAL TRIGGER (demo) -->
+      <div
+        class="modal fade"
+        id="ticketModal"
+        tabindex="-1"
+        aria-labelledby="ticketModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content km-modal">
+            <div class="modal-header border-0">
+              <h2 class="modal-title km-modal__title" id="ticketModalLabel">
+                Придбати квиток
+              </h2>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="modal"
+                aria-label="Закрити"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p class="km-modal__info" id="modalMovieInfo">Фільм: — Час: —</p>
+              <form id="ticketForm" novalidate>
+                <div class="mb-3">
+                  <label for="ticketName" class="form-label">Ваше ім'я</label>
+                  <input
+                    type="text"
+                    class="form-control km-input"
+                    id="ticketName"
+                    name="name"
+                    placeholder="Введіть ім'я"
+                    required
+                  />
+                  <div class="invalid-feedback">Будь ласка, введіть ім'я.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="ticketEmail" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control km-input"
+                    id="ticketEmail"
+                    name="email"
+                    placeholder="Введіть email"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Будь ласка, введіть коректний email.
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="ticketCount" class="form-label"
+                    >Кількість квитків</label
+                  >
+                  <select
+                    class="form-select km-input"
+                    id="ticketCount"
+                    name="count"
+                  >
+                    <option value="1">1 квиток</option>
+                    <option value="2">2 квитки</option>
+                    <option value="3">3 квитки</option>
+                    <option value="4">4 квитки</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn km-btn-orange w-100 mt-2">
+                  Підтвердити замовлення
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="km-footer mt-auto">
+      <div class="container">
+        <div class="row py-4 g-4">
+          <div class="col-lg-4">
+            <h2 class="km-footer__logo">Kino Mood</h2>
+            <p class="km-footer__text">
+              Кіно, яке відчувається. Відвідайте нас сьогодні.
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <h3 class="km-footer__heading">Навігація</h3>
+            <ul class="km-footer__nav list-unstyled">
+              <li><a href="index.html">Головна</a></li>
+              <li><a href="index.html#about">Про нас</a></li>
+              <li><a href="sessions.html">Сеанси</a></li>
+              <li><a href="contacts.html">Контакти</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h3 class="km-footer__heading">Контакти</h3>
+            <address class="km-footer__text">
+              <p>вул. Кінематографічна, 12</p>
+              <p><a href="tel:+380441234567">+38 (044) 123-45-67</a></p>
+              <p><a href="mailto:info@kinomood.ua">info@kinomood.ua</a></p>
+            </address>
+          </div>
+        </div>
+        <div class="km-footer__bottom text-center py-3">
+          <p class="mb-0">&copy; 2025 Kino Mood. Усі права захищені.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
